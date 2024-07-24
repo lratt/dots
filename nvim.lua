@@ -24,7 +24,9 @@ vim.opt.scrolloff = 8
 vim.bo.softtabstop = 2
 
 require("mini.pairs").setup()
-require("supermaven-nvim").setup({})
+require("supermaven-nvim").setup({
+  log_level = "off",
+})
 
 local lspconfig = require("lspconfig")
 local default_capabilities = require("cmp_nvim_lsp").default_capabilities()
