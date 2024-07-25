@@ -47,7 +47,11 @@
         dynamic_padding = false;
         resize_increments = true;
       };
-      font.size = 15;
+      font.size = 16;
+      font.normal = {
+        family = "JetbrainsMono Nerd Font";
+        style = "Regular";
+      };
       scrolling.history = 100000;
       selection.save_to_clipboard = true;
     };

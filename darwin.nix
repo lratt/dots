@@ -22,6 +22,10 @@
     ];
     casks = [
       {
+        name = "font-jetbrains-mono-nerd-font";
+        greedy = true;
+      }
+      {
         name = "monitorcontrol";
         greedy = true;
       } # monitor control on mac
