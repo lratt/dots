@@ -151,8 +151,10 @@
         nvim-lspconfig
         comment-nvim
         supermaven-nvim
+        gitsigns-nvim
         nvim-cmp
         cmp-nvim-lsp
+        base16-vim
         cmp-buffer
         cmp-path
         cmp-cmdline

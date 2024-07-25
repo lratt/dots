@@ -15,7 +15,7 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = true -- highlight all matches
 vim.opt.cursorline = true
 
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
 vim.opt.smartcase = true
@@ -23,10 +23,13 @@ vim.opt.scrolloff = 8
 
 vim.bo.softtabstop = 2
 
+vim.cmd("colorscheme base16-default-dark")
+
 require("mini.pairs").setup()
 require("supermaven-nvim").setup({
   log_level = "off",
 })
+require('gitsigns').setup()
 
 local lspconfig = require("lspconfig")
 local default_capabilities = require("cmp_nvim_lsp").default_capabilities()
