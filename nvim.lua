@@ -38,6 +38,7 @@ lspconfig["nil_ls"].setup({ capabilities = default_capabilities })
 lspconfig["svelte"].setup({ capabilities = default_capabilities })
 lspconfig["pyright"].setup({ capabilities = default_capabilities })
 lspconfig["tsserver"].setup({ capabilities = default_capabilities })
+lspconfig["jdtls"].setup({ capabilities = default_capabilities })
 lspconfig["rust_analyzer"].setup({
   capabilities = default_capabilities,
   settings = {
