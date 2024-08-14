@@ -26,6 +26,10 @@
         greedy = true;
       }
       {
+        name = "font-iosevka";
+        greedy = true;
+      }
+      {
         name = "monitorcontrol";
         greedy = true;
       } # monitor control on mac
