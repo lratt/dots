@@ -16,14 +16,14 @@ vim.opt.hlsearch = true -- highlight all matches
 vim.opt.cursorline = true
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = "light"
 
 vim.opt.smartcase = true
 vim.opt.scrolloff = 8
 
 vim.bo.softtabstop = 2
 
-vim.cmd("colorscheme base16-default-dark")
+vim.cmd("colorscheme base16-default-light")
 
 require("mini.pairs").setup()
 require("supermaven-nvim").setup({

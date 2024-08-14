@@ -47,13 +47,43 @@
         dynamic_padding = false;
         resize_increments = true;
       };
-      font.size = 16;
+      font.size = 15;
       font.normal = {
         family = "JetbrainsMono Nerd Font";
         style = "Regular";
       };
       scrolling.history = 100000;
       selection.save_to_clipboard = true;
+      colors = {
+        primary = {
+          background = "#f8f8f8";
+          foreground = "#383838";
+        };
+        cursor = {
+          text = "#f8f8f8";
+          cursor = "#383838";
+        };
+        normal = {
+          black = "#f8f8f8";
+          red = "#ab4642";
+          green = "#a1b56c";
+          yellow = "#f7ca88";
+          blue = "#7cafc2";
+          magenta = "#ba8baf";
+          cyan = "#86c1b9";
+          white = "#383838";
+        };
+        bright = {
+          black = "#b8b8b8";
+          red = "#dc9656";
+          green = "#e8e8e8";
+          yellow = "#d8d8d8";
+          blue = "#585858";
+          magenta = "#282828";
+          cyan = "#a16946";
+          white = "#181818";
+        };
+      };
     };
   };
 
