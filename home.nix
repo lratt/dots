@@ -56,32 +56,28 @@
       selection.save_to_clipboard = true;
       colors = {
         primary = {
-          background = "#f8f8f8";
-          foreground = "#383838";
-        };
-        cursor = {
-          text = "#f8f8f8";
-          cursor = "#383838";
+          background = "#3a3a3a";
+          foreground = "#d0d0d0";
         };
         normal = {
-          black = "#f8f8f8";
-          red = "#ab4642";
-          green = "#a1b56c";
-          yellow = "#f7ca88";
-          blue = "#7cafc2";
-          magenta = "#ba8baf";
-          cyan = "#86c1b9";
-          white = "#383838";
+          black = "#4e4e4e";
+          red = "#d68787";
+          green = "#5f865f";
+          yellow = "#d8af5f";
+          blue = "#85add4";
+          magenta = "#d7afaf";
+          cyan = "#87afaf";
+          white = "#d0d0d0";
         };
         bright = {
-          black = "#b8b8b8";
-          red = "#dc9656";
-          green = "#e8e8e8";
-          yellow = "#d8d8d8";
-          blue = "#585858";
-          magenta = "#282828";
-          cyan = "#a16946";
-          white = "#181818";
+          black = "#626262";
+          red = "#d75f87";
+          green = "#87af87";
+          yellow = "#ffd787";
+          blue = "#add4fb";
+          magenta = "#ffafaf";
+          cyan = "#87d7d7";
+          white = "#e4e4e4";
         };
       };
     };
@@ -181,6 +177,7 @@
         nvim-lspconfig
         comment-nvim
         supermaven-nvim
+        seoul256-vim
         gitsigns-nvim
         nvim-cmp
         cmp-nvim-lsp

@@ -15,15 +15,14 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = true -- highlight all matches
 vim.opt.cursorline = true
 
-vim.opt.termguicolors = true
-vim.opt.background = "light"
-
 vim.opt.smartcase = true
 vim.opt.scrolloff = 8
 
 vim.bo.softtabstop = 2
 
-vim.cmd("colorscheme base16-default-light")
+vim.opt.termguicolors = true
+vim.cmd("colorscheme seoul256")
+vim.opt.background = "dark"
 
 require("mini.pairs").setup()
 require("supermaven-nvim").setup({
