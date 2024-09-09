@@ -82,6 +82,10 @@
         greedy = true;
       }
       {
+        name = "zed";
+        greedy = true;
+      }
+      {
         name = "jetbrains-toolbox";
         greedy = true;
       }
