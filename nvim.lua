@@ -33,6 +33,10 @@ require('gitsigns').setup()
 local lspconfig = require("lspconfig")
 local default_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+lspconfig["elixirls"].setup({
+  capabilities = default_capabilities,
+  cmd = { "elixir-ls" }
+})
 lspconfig["nil_ls"].setup({ capabilities = default_capabilities })
 lspconfig["svelte"].setup({ capabilities = default_capabilities })
 lspconfig["pyright"].setup({ capabilities = default_capabilities })
