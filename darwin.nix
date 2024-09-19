@@ -30,6 +30,10 @@
         greedy = true;
       }
       {
+        name = "iina";
+        greedy = true;
+      }
+      {
         name = "monitorcontrol";
         greedy = true;
       } # monitor control on mac
