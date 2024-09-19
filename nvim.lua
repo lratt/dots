@@ -21,9 +21,8 @@ vim.opt.scrolloff = 8
 vim.bo.softtabstop = 2
 
 vim.opt.termguicolors = true
-vim.cmd("let g:seoul256_background = 236")
-vim.cmd("colorscheme seoul256")
 vim.opt.background = "dark"
+vim.cmd("colorscheme base16-default-dark")
 
 require("mini.pairs").setup()
 require("supermaven-nvim").setup({
