@@ -58,10 +58,6 @@
         greedy = true;
       } # spotlight alternative
       {
-        name = "rectangle";
-        greedy = true;
-      } # window management
-      {
         name = "appcleaner";
         greedy = true;
       } # better app cleanup
