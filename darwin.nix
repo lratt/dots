@@ -146,10 +146,11 @@
     mru-spaces = false;
     showhidden = true;
     magnification = false;
-    autohide = true;
+    autohide = false;
     autohide-delay = 0.0;
     autohide-time-modifier = 0.5;
     show-recents = false;
+    tilesize = 56;
     persistent-others = [ "/Users/lr/Downloads" ];
   };
 
