@@ -18,11 +18,11 @@ vim.opt.cursorline = true
 vim.opt.smartcase = true
 vim.opt.scrolloff = 8
 
-vim.bo.softtabstop = 2
+vim.bo.softtabstop = 4
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
-vim.cmd("colorscheme base16-default-dark")
+vim.opt.background = "light"
+vim.cmd("colorscheme deepwhite")
 
 vim.cmd("autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4")
 

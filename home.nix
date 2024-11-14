@@ -53,10 +53,40 @@
         dynamic_padding = false;
         resize_increments = true;
       };
-      font.size = 15;
+      font.size = 20;
       font.normal = {
         family = "JetbrainsMono Nerd Font";
         style = "Regular";
+      };
+      colors = {
+        primary = {
+          background = "#FAF2EB";
+          foreground = "#1A1918";
+        };
+        selection = {
+          text = "#1A1918";
+          background = "#CCCBC6";
+        };
+        normal = {
+          black = "#1A1918";
+          red = "#A60000";
+          green = "#00A600";
+          yellow = "#F2F200";
+          blue = "#0000A6";
+          magenta = "#6F00A6";
+          cyan = "#00A6A6";
+          white = "#FAF2EB";
+        };
+        bright = {
+          black = "#1A1918";
+          red = "#A60000";
+          green = "#00A600";
+          yellow = "#F2F200";
+          blue = "#0000A6";
+          magenta = "#6F00A6";
+          cyan = "#00A6A6";
+          white = "#FAF2EB";
+        };
       };
       scrolling.history = 100000;
       selection.save_to_clipboard = true;
@@ -183,6 +213,7 @@
       extraLuaConfig = lib.fileContents ./nvim.lua;
       defaultEditor = true;
       plugins = with pkgs.vimPlugins; [
+        deepwhite-nvim
         nvim-lspconfig
         nvim-lint
         conform-nvim
