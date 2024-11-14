@@ -251,7 +251,7 @@
     keyMode = "vi";
     prefix = "C-a";
     customPaneNavigationAndResize = true;
-    terminal = "xterm-256color";
+    terminal = "tmux-256color";
     extraConfig = ''
       set -g renumber-windows on
 
