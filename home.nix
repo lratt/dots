@@ -258,6 +258,7 @@
       set -g default-terminal "$TERM"
       set -ag terminal-overrides ",$TERM:Tc"
       set -g default-command "reattach-to-user-namespace -l zsh"
+      set-option -sg escape-time 10
 
       bind c new-window -c "#{pane_current_path}"
       bind '"' split-window -c "#{pane_current_path}"
