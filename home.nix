@@ -136,6 +136,11 @@
     userName = "lratt";
     userEmail = "104203130+lratt@users.noreply.github.com";
 
+    signing = {
+      key = "F7A3B2B1A868D8F1";
+      signByDefault = true;
+    };
+
     ignores = [
       ".idea"
       ".vscode"
