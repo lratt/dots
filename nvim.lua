@@ -24,7 +24,48 @@ vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.cmd("colorscheme base16-default-dark")
 
+vim.cmd("autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4")
+
+require('lint').linters_by_ft = ({
+  markdown = {'vale'},
+  python = {'flake8'},
+  rust = {'clippy'},
+  sh = {'shellcheck'},
+  lua = {'luacheck'},
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+  callback = function()
+    require("lint").try_lint()
+  end,
+})
+
+local prettier_cfg = {"prettierd", "prettier", stop_after_first = true}
+
+require("conform").setup({
+  formatters_by_ft = {
+    lua = {"stylua"},
+    python = {"isort", "black"},
+    rust = {"rustfmt", lsp_format = "fallback"},
+    go = {"gofmt"},
+    javascript = prettier_cfg,
+    typescript = prettier_cfg,
+    javascriptreact = prettier_cfg,
+    typescriptreact = prettier_cfg,
+    svelte = prettier_cfg,
+    css = prettier_cfg,
+    html = prettier_cfg,
+    json = prettier_cfg,
+    yaml = prettier_cfg,
+    markdown = prettier_cfg,
+    graphql = prettier_cfg,
+  },
+})
+
+require("mini.ai").setup()
 require("mini.pairs").setup()
+require("mini.trailspace").setup()
+require("mini.statusline").setup()
 require("supermaven-nvim").setup({
   log_level = "off",
 })
@@ -42,6 +83,7 @@ lspconfig["svelte"].setup({ capabilities = default_capabilities })
 lspconfig["pyright"].setup({ capabilities = default_capabilities })
 lspconfig["ts_ls"].setup({ capabilities = default_capabilities })
 lspconfig["jdtls"].setup({ capabilities = default_capabilities })
+lspconfig["marksman"].setup({ capabilities = default_capabilities })
 lspconfig["rust_analyzer"].setup({
   capabilities = default_capabilities,
   settings = {
@@ -139,7 +181,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "<leader>bf", function()
-      vim.lsp.buf.format { async = true }
+      -- vim.lsp.buf.format { async = true }
+      require('conform').format({ async = true, lsp_format = "fallback" })
     end, opts)
   end,
 })
@@ -173,6 +216,10 @@ require("nvim-treesitter.configs").setup({
   sync_install = false,
   highlight = { enable = true },
   indent = { enable = true },
+})
+
+require('treesitter-context').setup({
+  max_lines = 10,
 })
 
 local builtin = require("telescope.builtin")

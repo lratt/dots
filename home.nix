@@ -15,6 +15,12 @@
   };
 
   home.packages = with pkgs; [
+    marksman
+    shellcheck
+    luajit
+    luajitPackages.luacheck
+    ruff
+    vale
     reattach-to-user-namespace
     nil
     nixfmt-rfc-style
@@ -178,6 +184,8 @@
       defaultEditor = true;
       plugins = with pkgs.vimPlugins; [
         nvim-lspconfig
+        nvim-lint
+        conform-nvim
         comment-nvim
         supermaven-nvim
         base16-nvim
