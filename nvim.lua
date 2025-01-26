@@ -62,6 +62,7 @@ require("conform").setup({
   },
 })
 
+require("ibl").setup()
 require("mini.ai").setup()
 require("mini.pairs").setup()
 require("mini.trailspace").setup()

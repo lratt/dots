@@ -150,17 +150,6 @@
   };
 
   programs.neovim =
-    let
-      supermaven-nvim = pkgs.vimUtils.buildVimPlugin {
-        pname = "supermaven-nvim";
-        version = "HEAD";
-        src = builtins.fetchGit {
-          url = "https://github.com/supermaven-inc/supermaven-nvim";
-          rev = "d71257f431e190d9236d7f30da4c2d659389e91f";
-          ref = "HEAD";
-        };
-      };
-    in
     {
       enable = true;
       viAlias = true;
@@ -169,16 +158,15 @@
       defaultEditor = true;
       plugins = with pkgs.vimPlugins; [
         deepwhite-nvim
+        indent-blankline-nvim
         nvim-lspconfig
         nvim-lint
         conform-nvim
         comment-nvim
         supermaven-nvim
-        base16-nvim
         gitsigns-nvim
         nvim-cmp
         cmp-nvim-lsp
-        base16-vim
         cmp-buffer
         cmp-path
         cmp-cmdline
