@@ -99,9 +99,6 @@
 
       if [ "$(arch)" = "arm64" ]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
-        export PYENV_ROOT="$HOME/.pyenv"
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        eval "$(pyenv init -)"
 
         x86() {
           arch -x86_64 /bin/zsh
@@ -109,9 +106,6 @@
       else
         export PROMPT="X86 $PROMPT"
         eval "$(/usr/local/bin/brew shellenv)"
-        export PYENV_ROOT="$HOME/.pyenvx86"
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        eval "$(pyenv init -)"
       fi
 
       bindkey '^ ' autosuggest-accept
