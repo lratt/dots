@@ -16,24 +16,7 @@
 
   homebrew = {
     enable = true;
-    taps = [
-      "homebrew/cask-fonts"
-      "zackelia/formulae" # bclm
-    ];
-    brews = [
-      "bclm"
-      "pyenv"
-      "gettext" # required for python to build :-)
-    ];
     casks = [
-      {
-        name = "font-jetbrains-mono-nerd-font";
-        greedy = true;
-      }
-      {
-        name = "font-iosevka";
-        greedy = true;
-      }
       {
         name = "iina";
         greedy = true;
@@ -51,17 +34,9 @@
         greedy = true;
       } # mac fuse support
       {
-        name = "maccy";
-        greedy = true;
-      } # mac clipboard history
-      {
         name = "keepingyouawake";
         greedy = true;
       } # caffeinate wrapper
-      {
-        name = "raycast";
-        greedy = true;
-      } # spotlight alternative
       {
         name = "appcleaner";
         greedy = true;
@@ -83,14 +58,6 @@
         greedy = true;
       }
       {
-        name = "visual-studio-code";
-        greedy = true;
-      }
-      {
-        name = "zed";
-        greedy = true;
-      }
-      {
         name = "jetbrains-toolbox";
         greedy = true;
       }
@@ -103,19 +70,11 @@
         greedy = true;
       }
       {
-        name = "transmission";
-        greedy = true;
-      } # bittorrent client
-      {
         name = "utm";
         greedy = true;
       } # qemu / virtualization
       {
         name = "slack";
-        greedy = true;
-      }
-      {
-        name = "discord";
         greedy = true;
       }
       {
