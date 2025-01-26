@@ -7,24 +7,37 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      nix-darwin,
-      home-manager,
-      ...
-    }:
-    {
+  outputs = { self, nixpkgs, nix-darwin, home-manager, ... }:
+    let vars = import ./vars.nix;
+    in {
+      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit vars; };
+              users.lr = import ./home.nix;
+            };
+          }
+        ];
+      };
+
       darwinConfigurations."mbp16" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
         modules = [
           ./darwin.nix
           home-manager.darwinModules.home-manager
           {
-            home-manager.users.lr = import ./home.nix;
+            home-manager = {
+              extraSpecialArgs = { inherit vars; };
+              users.lr = import ./home.nix;
+            };
           }
         ];
       };
-      darwinPackages = self.darwinConfigurations."mbp16".pkgs;
     };
 }

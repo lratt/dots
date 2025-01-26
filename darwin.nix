@@ -1,5 +1,4 @@
-{ self, pkgs, ... }:
-{
+{ self, pkgs, ... }: {
   services.nix-daemon.enable = true;
 
   users.users.lr = {

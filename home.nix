@@ -1,10 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, vars, ... }:
 
 {
   home.stateVersion = "24.11";
 
-  home.username = "lr";
-  home.homeDirectory = "/Users/lr";
+  home.username = "${vars.user}";
+  home.homeDirectory = "${vars.home}";
 
   home.shellAliases = {
     ls = "eza";
@@ -20,33 +20,33 @@
     GIT_SSH_COMMAND = "ssh -i ~/.ssh/id_lratt";
   };
 
-  home.packages = with pkgs; [
-    marksman
-    shellcheck
-    luajit
-    luajitPackages.luacheck
-    vale
-    reattach-to-user-namespace
-    nil
-    nixfmt-rfc-style
-    lua-language-server
-    nodePackages.typescript-language-server
-    pyright
-    inetutils
-    jq
-    xsv
-    bat
-    fd
-    eza
-    du-dust
-    ripgrep
-    delta
-    coreutils
-    gnused
-    nmap
-    htop
-    opentofu
-  ];
+  home.packages = with pkgs;
+    [
+      marksman
+      shellcheck
+      luajit
+      luajitPackages.luacheck
+      vale
+      nil
+      nixfmt-rfc-style
+      lua-language-server
+      nodePackages.typescript-language-server
+      pyright
+      inetutils
+      jq
+      xsv
+      bat
+      fd
+      eza
+      du-dust
+      ripgrep
+      delta
+      coreutils
+      gnused
+      nmap
+      htop
+      opentofu
+    ] ++ lib.optional stdenv.isDarwin [ reattach-to-user-namespace ];
 
   programs.readline = {
     enable = true;
