@@ -10,6 +10,11 @@
     ls = "eza";
   };
 
+  home.sessionPath = [
+    "/Users/lr/.local/bin"
+    "/Users/lr/.cargo/bin"
+  ];
+
   home.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -107,7 +112,6 @@
         export PATH="$PYENV_ROOT/bin:$PATH"
         eval "$(pyenv init -)"
       fi
-      export PATH="$HOME/.local/bin:$PATH"
 
       bindkey '^ ' autosuggest-accept
     '';
