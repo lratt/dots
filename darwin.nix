@@ -108,8 +108,6 @@
     };
   };
 
-  system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
-
   system.defaults.dock = {
     mru-spaces = false;
     showhidden = true;
