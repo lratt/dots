@@ -9,6 +9,11 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
+  nix.settings.trusted-users = [
+    "root"
+    "lr"
+  ];
+
   homebrew = {
     enable = true;
     taps = [
