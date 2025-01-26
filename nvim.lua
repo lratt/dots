@@ -18,6 +18,8 @@ vim.opt.cursorline = true
 vim.opt.smartcase = true
 vim.opt.scrolloff = 8
 
+vim.g.zig_fmt_parse_errors = 0
+
 vim.bo.softtabstop = 4
 
 vim.opt.termguicolors = true
@@ -85,6 +87,7 @@ lspconfig["pyright"].setup({ capabilities = default_capabilities })
 lspconfig["ts_ls"].setup({ capabilities = default_capabilities })
 lspconfig["jdtls"].setup({ capabilities = default_capabilities })
 lspconfig["marksman"].setup({ capabilities = default_capabilities })
+lspconfig["zls"].setup({ capabilities = default_capabilities })
 lspconfig["rust_analyzer"].setup({
   capabilities = default_capabilities,
   settings = {
