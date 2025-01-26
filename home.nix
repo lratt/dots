@@ -17,6 +17,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    GIT_SSH_COMMAND = "ssh -i ~/.ssh/id_lratt";
   };
 
   home.packages = with pkgs; [
@@ -126,7 +127,7 @@
     userEmail = "104203130+lratt@users.noreply.github.com";
 
     signing = {
-      key = "F7A3B2B1A868D8F1";
+      key = "~/.ssh/id_lratt.pub";
       signByDefault = true;
     };
 
