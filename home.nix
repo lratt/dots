@@ -25,7 +25,6 @@
     shellcheck
     luajit
     luajitPackages.luacheck
-    ruff
     vale
     reattach-to-user-namespace
     nil
