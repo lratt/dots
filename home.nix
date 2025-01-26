@@ -45,6 +45,7 @@
     gnused
     nmap
     htop
+    opentofu
   ];
 
   programs.readline = {
