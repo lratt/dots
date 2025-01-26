@@ -139,6 +139,13 @@
       diff.algorithm = "histogram";
       merge.conflictstyle = "zdiff3";
       pull.ff = "only";
+      gpg.format = "ssh";
+      gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+    };
+
+    aliases = {
+      s = "status -s";
+      l = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
     };
   };
 
