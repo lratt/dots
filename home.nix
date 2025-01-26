@@ -149,35 +149,34 @@
     };
   };
 
-  programs.neovim =
-    {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-      extraLuaConfig = lib.fileContents ./nvim.lua;
-      defaultEditor = true;
-      plugins = with pkgs.vimPlugins; [
-        deepwhite-nvim
-        indent-blankline-nvim
-        nvim-lspconfig
-        nvim-lint
-        conform-nvim
-        comment-nvim
-        supermaven-nvim
-        gitsigns-nvim
-        nvim-cmp
-        cmp-nvim-lsp
-        cmp-buffer
-        cmp-path
-        cmp-cmdline
-        luasnip
-        cmp_luasnip
-        mini-nvim
-        telescope-nvim
-        nvim-treesitter.withAllGrammars
-        nvim-treesitter-context
-      ];
-    };
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    extraLuaConfig = lib.fileContents ./nvim.lua;
+    defaultEditor = true;
+    plugins = with pkgs.vimPlugins; [
+      deepwhite-nvim
+      indent-blankline-nvim
+      nvim-lspconfig
+      nvim-lint
+      conform-nvim
+      comment-nvim
+      supermaven-nvim
+      gitsigns-nvim
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      luasnip
+      cmp_luasnip
+      mini-nvim
+      telescope-nvim
+      nvim-treesitter.withAllGrammars
+      nvim-treesitter-context
+    ];
+  };
 
   programs.direnv = {
     enable = true;

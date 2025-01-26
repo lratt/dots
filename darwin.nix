@@ -136,7 +136,6 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.permittedInsecurePackages = [ "python-2.7.18.8" ];
 
-
   nix.settings.experimental-features = "nix-command flakes";
   nix.extraOptions = ''
     extra-platforms = x86_64-darwin aarch64-darwin
