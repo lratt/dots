@@ -26,6 +26,10 @@
         greedy = true;
       } # monitor control on mac
       {
+        name = "ghostty";
+        greedy = true;
+      }
+      {
         name = "mos";
         greedy = true;
       } # better mouse control on mac
