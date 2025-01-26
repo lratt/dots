@@ -193,6 +193,8 @@
     mouse = true;
     keyMode = "vi";
     prefix = "C-a";
+    sensibleOnTop = true;
+    historyLimit = 50000;
     customPaneNavigationAndResize = true;
     terminal = "tmux-256color";
     extraConfig = ''
