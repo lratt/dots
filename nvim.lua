@@ -69,9 +69,9 @@ require("mini.ai").setup()
 require("mini.pairs").setup()
 require("mini.trailspace").setup()
 require("mini.statusline").setup()
-require("supermaven-nvim").setup({
-  log_level = "off",
-})
+-- require("supermaven-nvim").setup({
+--   log_level = "off",
+-- })
 require('gitsigns').setup()
 
 local lspconfig = require("lspconfig")

@@ -163,7 +163,6 @@
       nvim-lint
       conform-nvim
       comment-nvim
-      supermaven-nvim
       gitsigns-nvim
       nvim-cmp
       cmp-nvim-lsp
