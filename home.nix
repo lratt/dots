@@ -25,7 +25,6 @@
       marksman
       shellcheck
       luajit
-      luajitPackages.luacheck
       vale
       nil
       nixfmt-rfc-style

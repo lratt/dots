@@ -33,7 +33,6 @@ require('lint').linters_by_ft = ({
   python = {'flake8'},
   rust = {'clippy'},
   sh = {'shellcheck'},
-  lua = {'luacheck'},
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
