@@ -105,6 +105,7 @@ lspconfig["lua_ls"].setup({
     Lua = {
       workspace = {
         checkThirdParty = false,
+        library = { vim.env.VIMRUNTIME }
       },
       completion = {
         callSnippet = "Replace",
