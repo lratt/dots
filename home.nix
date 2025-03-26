@@ -156,6 +156,7 @@
     extraLuaConfig = lib.fileContents ./nvim.lua;
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
+      modus-themes-nvim
       deepwhite-nvim
       indent-blankline-nvim
       nvim-lspconfig

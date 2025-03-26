@@ -24,7 +24,7 @@ vim.bo.softtabstop = 4
 
 vim.opt.termguicolors = true
 vim.opt.background = "light"
-vim.cmd("colorscheme deepwhite")
+vim.cmd("colorscheme modus")
 
 vim.cmd("autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4")
 
