@@ -33,7 +33,6 @@
       pyright
       inetutils
       jq
-      xsv
       bat
       fd
       eza

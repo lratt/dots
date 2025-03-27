@@ -1,12 +1,10 @@
 { self, pkgs, ... }: {
-  services.nix-daemon.enable = true;
-
   users.users.lr = {
     name = "lr";
     home = "/Users/lr";
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   nix.settings.trusted-users = [
     "root"
