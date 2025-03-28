@@ -22,6 +22,8 @@ vim.g.zig_fmt_parse_errors = 0
 
 vim.bo.softtabstop = 4
 
+vim.opt.completeopt = "menuone,noinsert,noselect,popup,fuzzy"
+
 vim.opt.termguicolors = true
 vim.opt.background = "light"
 vim.cmd("colorscheme modus")
@@ -163,18 +165,43 @@ vim.lsp.config["gopls"] = {
 vim.lsp.enable({'luals', 'rust-analyzer', 'zls', 'pyright', 'gopls'})
 
 vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function (ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-
-    vim.cmd([[set completeopt+=menuone,noselect,popup]])
+  callback = function (args)
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
     vim.keymap.set('i', '<c-space>', function()
       vim.lsp.completion.get()
     end)
 
     if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
     end
+
+    local _, cancel_prev = nil, function() end
+    vim.api.nvim_create_autocmd('CompleteChanged', {
+      buffer = args.buf,
+      callback = function()
+        cancel_prev()
+        local info = vim.fn.complete_info({ 'selected' })
+        local completionItem = vim.tbl_get(vim.v.completed_item, 'user_data', 'nvim', 'lsp', 'completion_item')
+        if nil == completionItem then
+          return
+        end
+        _, cancel_prev = vim.lsp.buf_request(args.buf,
+          vim.lsp.protocol.Methods.completionItem_resolve,
+          completionItem,
+          function(err, item, ctx)
+            if not item then
+              return
+            end
+            local docs = (item.documentation or {}).value
+            local win = vim.api.nvim__complete_set(info['selected'], { info = docs })
+            if win.winid and vim.api.nvim_win_is_valid(win.winid) then
+              vim.treesitter.start(win.bufnr, 'markdown')
+              vim.wo[win.winid].conceallevel = 3
+            end
+          end)
+      end
+    })
   end
 })
 
