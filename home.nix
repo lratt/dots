@@ -157,18 +157,10 @@
       modus-themes-nvim
       deepwhite-nvim
       indent-blankline-nvim
-      nvim-lspconfig
       nvim-lint
       conform-nvim
       comment-nvim
       gitsigns-nvim
-      nvim-cmp
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      cmp-cmdline
-      luasnip
-      cmp_luasnip
       mini-nvim
       telescope-nvim
       nvim-treesitter.withAllGrammars
